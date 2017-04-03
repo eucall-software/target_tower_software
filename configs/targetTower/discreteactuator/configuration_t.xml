@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/Configuration.xsd">
+    <Device manufacturer="Phidget" name="stepper" type="discreteActuator" serialNumber="398853">
+        <Struct>
+            <Component name="connection">
+                <Parameter name="serialNumber" description="serial number of the controller" type="uint32_t" value="398853" readOnly="false"/>
+            </Component>
+        </Struct>
+        <Parameter name="velocity" description="the velocity of the Phidget stepper actuator" type="double" value="35000" readOnly="false"/>
+        <Parameter name="acceleration" description="the acceleration of the Phidget stepper actuator" type="double" value="40000" readOnly="false"/>
+        <Parameter name="position" description="the current position of the Phidget stepper actuator" type="int64_t" value="0" readOnly="false"/>
+        <Parameter name="geometricPositionMin" description="the min position of the Phidget stepper actuator [mm]" type="int64_t" value="0" readOnly="false"/>
+        <Parameter name="geometricPositionMax" description="the max position of the Phidget stepper actuator [mm]" type="int64_t" value="214.000000" readOnly="false"/>
+        <Parameter name="resolution" description="The step resolution of the actuator [mm]" type="double" value="0.020" readOnly="false"/>
+        <Parameter name="current" description="The current settings of the actuator [A]" type="double" value="1.10" readOnly="false"/>
+        <Parameter name="safeRange" description="Defines the offset from min and max position [steps]" type="int64_t" value="2000" readOnly="false"/>
+        <Parameter name="moveInThread" description="Activates/Deactivates the background thread for moving. Makes the API non blocking / blocking" type="uint32_t" value="1" readOnly="false"/>
+    </Device>
+</Configuration>

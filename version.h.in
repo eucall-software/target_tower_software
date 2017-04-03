@@ -1,0 +1,14 @@
+#ifndef _VERSION_H_
+#define _VERSION_H_
+
+#define VERSION_MAJOR         "@VERSION_MAJOR@"            /**< Major version of project */
+#define VERSION_MINOR         "@VERSION_MINOR@"            /**< Minor version of project */
+#define VERSION_PATCH         "@VERSION_PATCH@"            /**< Patch version of project */
+#define VERSION_HEAD          "@VERSION_HEAD@"             /**< GIT SHA1 full size */
+#define VERSION_SHORT_HEAD    "@VERSION_SHORT_HEAD@"       /**< GIT SHA1 short size */
+
+#define VERSION               "@VERSION_LONG@"             /**< Full version of project */
+#define VERSION_LONG          "@VERSION_LONG@"             /**< Long version of project */
+#define VERSION_SHORT         "@VERSION_SHORT@"            /**< Short version of project */
+
+#endif    /* _VERSION_H_*/
