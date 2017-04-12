@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="Component">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Struct" type="Configuration" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Plugin" type="Plugin" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Parameter" type="Parameter" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="Parameter">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="EnumValue" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>List of the possible values of the enum.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ListElement" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MapElement" type="MapElement" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="description" use="required" type="xs:string"/>
+		<xs:attribute name="type" use="required" type="DataType"/>
+		<xs:attribute name="value" use="required" type="xs:string"/>
+		<xs:attribute name="readOnly" use="optional" default="false" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:simpleType name="DataType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="double"/>
+			<xs:enumeration value="enum"/>
+			<xs:enumeration value="float"/>
+			<xs:enumeration value="int16_t"/>
+			<xs:enumeration value="int32_t"/>
+			<xs:enumeration value="int64_t"/>
+			<xs:enumeration value="int8_t"/>
+			<xs:enumeration value="list"/>
+			<xs:enumeration value="mapDouble"/>
+			<xs:enumeration value="mapString"/>
+			<xs:enumeration value="string"/>
+			<xs:enumeration value="uint16_t"/>
+			<xs:enumeration value="uint32_t"/>
+			<xs:enumeration value="uint64_t"/>
+			<xs:enumeration value="uint8_t"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Configuration" type="Configuration"/>
+	<xs:complexType name="Plugin">
+		<xs:choice minOccurs="1" maxOccurs="1">
+			<xs:element name="Configuration" type="Configuration" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DB" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="FileName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:choice>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="type" use="required" type="PluginConfigurationType"/>
+	</xs:complexType>
+	<xs:simpleType name="PluginConfigurationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="db"/>
+			<xs:enumeration value="file"/>
+			<xs:enumeration value="stream"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Configuration">
+		<xs:choice>
+			<xs:element name="Component" type="Component" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Device" type="Device" minOccurs="0" maxOccurs="1"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="MapElement">
+		<xs:sequence/>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="value" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="Device">
+		<xs:complexContent>
+			<xs:extension base="Component">
+				<xs:sequence/>
+				<xs:attribute name="manufacturer" use="required" type="xs:string"/>
+				<xs:attribute name="type" use="required" type="xs:string"/>
+				<xs:attribute name="serialNumber" use="required" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

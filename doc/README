@@ -1,0 +1,20 @@
+This directory contains the Doxygen configuration file,
+as well as the developer's documentation (after building it).
+
+The developer's documentation is built using the following
+commands:
+
+$doxygen Doxyfile
+$cd latex
+$make
+$cd ..
+
+After this, the documentation of the project
+tmpTest will be ready. 
+
+The html version of the documentation can be accessed by
+opening the file html/index.html
+
+The pdf version of the document is contained in the file
+latex/refman.pdf
+

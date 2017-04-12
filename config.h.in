@@ -1,0 +1,15 @@
+#cmakedefine HAVE_MALLOC_H 1
+#cmakedefine HAVE_SYS_MOUNT_H 1
+#cmakedefine HAVE_STDIO_H 1
+#cmakedefine HAVE_STDLIB_H 1
+#cmakedefine HAVE_TYPES_H 1
+#cmakedefine HAVE_SOCKET_H 1
+#cmakedefine HAVE_IOCTL_H 1
+#cmakedefine HAVE_IF_H 1
+#cmakedefine HAVE_STRING_H 1
+#cmakedefine HAVE_UNISTD_H 1
+#cmakedefine HAVE_POLL_H 1
+#cmakedefine HAVE_ERRNO_H 1
+#cmakedefine HAVE_CAN_H 1
+#cmakedefine HAVE_CAN_RAW_H 1
+#cmakedefine HAVE_PTHREAD_H 1

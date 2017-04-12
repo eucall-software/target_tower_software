@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/Configuration.xsd">
+    <Device manufacturer="Phidget" name="stepper" type="movingStage" serialNumber="337537">
+        <Struct>
+            <Component name="connection">
+                <Parameter name="serialNumber" description="serial number of the controller" type="uint32_t" value="348136" readOnly="false"/>
+            </Component>
+        </Struct>
+        <Struct>
+            <Component name="switches">
+                <Parameter name="configurationFile" description="The configuration file for the limit switches" type="string"
+                           value="/home/ondra/Documents/local_git/targettower/SW/cstargettower/Implementation/configs/targetTower/movingstage/limit_switchesSS.xml"
+                           readOnly="false"/>
+            </Component>
+        </Struct>        
+        <Parameter name="velocity" description="the velocity of the Phidget stepper moving stage" type="double" value="15000" readOnly="false"/>
+        <Parameter name="acceleration" description="the acceleration of the Phidget stepper moving stage" type="double" value="40000" readOnly="false"/>
+        <Parameter name="position" description="the current position of the Phidget stepper moving stage" type="double" value="0" readOnly="false"/>
+        <Parameter name="geometricPositionMin" description="the min position of the Phidget continuos stage [mm]" type="double" value="0" readOnly="false"/>
+        <Parameter name="geometricPositionMax" description="the max position of the Phidget continuos stage [mm]" type="double" value="138.500000" readOnly="false"/>
+        <Parameter name="resolution" description="The step resolution of the actuator [mm]" type="double" value="0.000393" readOnly="false"/>
+        <Parameter name="current" description="The current settings of the actuator [A]" type="double" value="1.10" readOnly="false"/>
+        <Parameter name="safeRange" description="Defines the offset from mi and max position [mm]" type="double" value="1" readOnly="false"/>\
+        <Parameter name="moveInThread" description="Activates/Deactivates the background thread for moving. Makes the API non blocking / blocking" type="uint32_t" value="1" readOnly="false"/>
+    </Device>
+</Configuration>

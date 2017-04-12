@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/Configuration.xsd">
+    <Device manufacturer="ELI" name="Target Tower" type="target tower" serialNumber="N/A">
+        <Struct>
+            <Component name="motion">
+                <Parameter name="configurationX" description="the configuration file of the x axis" type="string" 
+                           value="/home/ondra/Documents/local_git/targettower/SW/cstargettower/Implementation/configs/targetTower/movingstage/configuration_x.xml" readOnly="false"/>
+                <Parameter name="configurationY" description="the configuration file of the y axis" type="string" 
+                           value="/home/ondra/Documents/local_git/targettower/SW/cstargettower/Implementation/configs/targetTower/movingstage/configuration_y.xml" readOnly="false"/>
+                <Parameter name="configurationZ" description="the configuration file of the z axis" type="string" 
+                           value="/home/ondra/Documents/local_git/targettower/SW/cstargettower/Implementation/configs/targetTower/movingstage/configuration_z.xml" readOnly="false"/>
+                <Parameter name="configurationT" description="the configuration file of the t axis" type="string" 
+                           value="/home/ondra/Documents/local_git/targettower/SW/cstargettower/Implementation/configs/targetTower/movingstage/configuration_tSS.xml" readOnly="false"/>
+                <Parameter name="configurationP" description="the configuration file of the p axis" type="string" 
+                           value="/home/ondra/Documents/local_git/targettower/SW/cstargettower/Implementation/configs/targetTower/movingstage/configuration_p.xml" readOnly="false"/>
+            </Component>
+        </Struct>
+        <Struct>
+            <Component name="camera">
+                <Parameter name="serialNumber" description="the serial number of the Target Tower camera" 
+                           type="string" value="21724959" readOnly="false"/>
+                <Parameter name="defaultExposure" description="the default exposure for the camera" 
+                   type="double" value="35000" readOnly="false"/>
+                <Parameter name="preconfigured" description="if the camera is preconfigured or not (1 or 0)" 
+                   type="int16_t" value="0" readOnly="false"/>
+            </Component>
+        </Struct>
+        <Struct>
+            <Component name="alignment">
+                <Parameter name="maxAlignmentSteps" description="the max number of tries to minimize the delta Z [mm]" type="uint32_t" value="10" readOnly="false"/>
+                <Parameter name="fineRange" description="the +- range for fine focus search i Z axis[mm]" type="double" value="0.1" readOnly="false"/>
+                <Parameter name="mildRange" description="the +- range for focus search when rough Z axis position is already known [mm]" type="double" value="0.5" readOnly="false"/>
+                <Parameter name="deltaZLimit" description="the acceptable delta Z [mm]" type="double" value="0.020" readOnly="false"/>
+                <Parameter name="distancePaxis" description="the position of the P axis on the X axis [mm]" type="double" value="60" readOnly="false"/>
+                <Parameter name="p1x" description="the first alignent point x position [mm]" type="double" value="114" readOnly="false"/>
+                <Parameter name="p1y" description="the first alignent point y position [mm]" type="double" value="44" readOnly="false"/>
+                <Parameter name="p2x" description="the second alignent point x position [mm]" type="double" value="64" readOnly="false"/>
+                <Parameter name="p2y" description="the second alignent point y position [mm]" type="double" value="44" readOnly="false"/>
+                <Parameter name="p3x" description="the third alignent point x position [mm]" type="double" value="114" readOnly="false"/>
+                <Parameter name="p3y" description="the third alignent point y position [mm]" type="double" value="89" readOnly="false"/>
+                <Parameter name="firstStepDivider" description="the coefficient used to reduce (divide) the movement size 
+                           when the deltaZ is in between 30 - 50 [um]" type="uint32_t" value="1" readOnly="false"/>
+                <Parameter name="secondStepDivider" description="the coefficient used to reduce (divide) the movement size 
+                           when the deltaZ is in less than 30 [um]" type="uint32_t" value="5" readOnly="false"/>
+                <Parameter name="thirdStepDivider" description="the coefficient used to reduce (divide) the movement size 
+                           when the deltaZ is in less than 10 [um]" type="uint32_t" value="100" readOnly="false"/>
+                <Parameter name="h1x" description="the first holder alignent point x position [mm]" type="double" value="72" readOnly="false"/>
+                <Parameter name="h1y" description="the first holder alignent point y position [mm]" type="double" value="87" readOnly="false"/>
+                <Parameter name="h2x" description="the second holder alignent point x position [mm]" type="double" value="107" readOnly="false"/>
+                <Parameter name="h2y" description="the second holder alignent point y position [mm]" type="double" value="87" readOnly="false"/>
+                <Parameter name="h3x" description="the fourth holder alignent point x position [mm]" type="double" value="69" readOnly="false"/>
+                <Parameter name="h3y" description="the fourth holder alignent point y position [mm]" type="double" value="52" readOnly="false"/>
+                <Parameter name="h4x" description="the third holder alignent point x position [mm]" type="double" value="69" readOnly="false"/>
+                <Parameter name="h4y" description="the third holder alignent point y position [mm]" type="double" value="83" readOnly="false"/>
+            </Component>
+	</Struct>        
+	<Struct>
+            <Component name="alignment2">
+                <Parameter name="fineRange" description="the +- range for fine focus search in P axis[mm]" type="double" value="0.5" readOnly="false"/>
+                <Parameter name="roughRange" description="the +- range for fine rough search in P axis[mm]" type="double" value="4" readOnly="false"/>
+                <Parameter name="zRange" description="the +- range for the axis Z search [mm]" type="double" value="2" readOnly="false"/>
+            </Component>
+        </Struct>  
+	<Struct>
+            <Component name="analysis">
+                <Parameter name="offsetX" description="the offset of sample centers for x axis of the holder 1[mm]" type="double" value="3.735" readOnly="false"/>
+                <Parameter name="offsetY" description="the offset of sample centers for y axis of the holder 1[mm]" type="double" value="3.355" readOnly="false"/>
+                <Parameter name="s1x" description="the first sample center point x position [mm]" type="double" value="106.055" readOnly="false"/>
+                <Parameter name="s1y" description="the first sample center point y position [mm]" type="double" value="52.531" readOnly="false"/>
+                <Parameter name="imagesH1" description="if to take images of the holder 1 focused centers" type="uint32_t" value="1" readOnly="false"/>
+                <Parameter name="samplesX" description="number of samples in x axis" type="uint32_t" value="10" readOnly="false"/>
+                <Parameter name="samplesY" description="number of samples in y axis" type="uint32_t" value="10" readOnly="false"/>
+            </Component>
+        </Struct>        
+        <Parameter name="motionType" description="the type of motion hardware" 
+                   type="string" value="phidget" readOnly="false"/>
+        <Parameter name="defaultX" description="the absolute default position for the axis X [mm]" 
+                   type="double" value="114" readOnly="false"/>
+        <Parameter name="defaultY" description="the default absolute position for the axis Y [mm]" 
+                   type="double" value="44" readOnly="false"/>
+        <Parameter name="defaultZ" description="the default absolute position for the axis Z [mm]"  
+                   type="double" value="7" readOnly="false"/>
+        <Parameter name="defaultT" description="the default absolute position for the axis T [mm]" 
+                   type="double" value="2.0" readOnly="false"/>
+        <Parameter name="defaultP" description="the default absolute position for the axis P [mm]" 
+                   type="double" value="7" readOnly="false"/>
+        <Parameter name="imagePoolPeriod" description="how often are images taken for focus calculation [ms]" 
+                   type="uint32_t" value="20" readOnly="false"/>
+    </Device>
+</Configuration>
